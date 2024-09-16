@@ -41,11 +41,11 @@ for _ in range(10000):
         'last_name': fake.last_name(),
         'email': fake.email(),
         'registration_date': fake.date_between(start_date='-5y', end_date='today'),
-        'birth_date': fake.date_of_birth(minimum_age=18, maximum_age=65),
+        'birth_date': fake.date_of_birth(minimum_age=18, maximum_age=65) if fake.boolean(chance_of_getting_true=95) else None, # 5% of missing birth dates
         'street_address': fake.street_address(),
         'city': fake.city(),
-        'state': fake.state(),
-        'prefered_device': fake.random_element(elements=('Mobile', 'Desktop', 'Tablet')),
+        'state': fake.state() if fake.boolean(chance_of_getting_true=95) else None,
+        'prefered_device': fake.random_element(elements=('Mobile', 'Desktop', 'Tablet')) if fake.boolean(chance_of_getting_true=90) else None, # 10% of missing prefered_device
         'email_opt_in': fake.boolean(chance_of_getting_true=40),
         # Make 'Credit Card' the most common payment method
         'prefered_payment_methods': fake.random_element(elements=('Credit Card' ,'Credit Card', 'Credit Card', 'Paypal', 'Apple Pay', 'Google Pay')),
