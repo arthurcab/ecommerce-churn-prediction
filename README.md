@@ -57,19 +57,9 @@ This project focuses on building an end-to-end churn prediction model for an e-c
 
 [] Develop the Streamlit application for interactive visualization and prediction.
 
-### Technologies Used:
+### Libraries Used:
 
-Python
-
-Faker
-
-NumPy
-
-Pandas
-
-Scikit-learn
-
-Streamlit
+`Python`, `faker`, `numpy`, `scikitlearn`, `pandas`, `streamlit`
 
 ### How to Run (Once Completed):
 
